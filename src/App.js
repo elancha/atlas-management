@@ -1,5 +1,6 @@
+/* eslint-disable react/prop-types */
 import React, { Component, Suspense } from 'react'
-import { HashRouter, Route, Routes } from 'react-router-dom'
+import { HashRouter, Route, Routes, Navigate } from 'react-router-dom'
 import './scss/style.scss'
 
 const loading = (
@@ -7,6 +8,13 @@ const loading = (
     <div className="sk-spinner sk-spinner-pulse"></div>
   </div>
 )
+
+const RequireAuth = ({ children }) => {
+  return <Navigate to="/login" replace /> //Esto hace que siempre me devuelva el login
+  if (children) {
+    return children
+  }
+}
 
 // Containers
 const DefaultLayout = React.lazy(() => import('./layout/DefaultLayout'))
@@ -23,11 +31,19 @@ class App extends Component {
       <HashRouter>
         <Suspense fallback={loading}>
           <Routes>
+            <Route
+              path="*"
+              name="Home"
+              element={
+                <RequireAuth>
+                  <DefaultLayout />
+                </RequireAuth>
+              }
+            />
             <Route exact path="/login" name="Login Page" element={<Login />} />
             <Route exact path="/register" name="Register Page" element={<Register />} />
             <Route exact path="/404" name="Page 404" element={<Page404 />} />
             <Route exact path="/500" name="Page 500" element={<Page500 />} />
-            <Route path="*" name="Home" element={<DefaultLayout />} />
           </Routes>
         </Suspense>
       </HashRouter>
