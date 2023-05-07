@@ -36,7 +36,6 @@ export const appSlice = createSlice({
       state.auth.refreshToken = tokenInfo.refreshToken;
       state.auth.expires = Date.now() + 900*1000;
 
-
       state.auth.userInfo = {
         ...tokenInfo.userInfo,
       }
@@ -46,14 +45,17 @@ export const appSlice = createSlice({
       state.core = defaultState.core;
     },
 
-
-
     // Toasts
     pushToast: (state, action) => {
       state.ui.toasts.push(action.payload);
     },
     clearToasts: (state, action) => {
       state.ui.toasts = [];
+    },
+
+    //Mostrar y ocultar barra
+    setSidebarShow: (state, action) => {
+      state.ui.sidebarShow = action.payload;
     }
   }
 })
