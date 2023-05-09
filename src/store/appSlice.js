@@ -56,6 +56,10 @@ export const appSlice = createSlice({
     //Mostrar y ocultar barra
     setSidebarShow: (state, action) => {
       state.ui.sidebarShow = action.payload;
+    },
+
+    setSidebarUnfoldable: (state, action) => {
+      state.ui.sidebarUnfoldable = action.payload;
     }
   }
 })
@@ -80,6 +84,7 @@ export const hasExpired = (state) => {
 }
 
 //UI
-//Poner aqui lo del setSidebarShow del appsidebar
+export const getSidebarShow = (state) => state.app.ui.sidebarShow;
+export const getSidebarUnfoldable = (state) => state.app.ui.sidebarUnfoldable;
 
 export default appSlice.reducer

@@ -17,7 +17,6 @@ import { cilBell, cilEnvelopeOpen, cilList, cilMenu } from '@coreui/icons'
 import { AppBreadcrumb } from './index'
 import { AppHeaderDropdown } from './header/index'
 import { logo } from 'src/assets/brand/logo'
-import { Row, Col } from 'react-bootstrap'
 
 const AppHeader = () => {
   const dispatch = useDispatch()

@@ -14,12 +14,14 @@ import 'simplebar/dist/simplebar.min.css'
 
 // sidebar nav config
 import navigation from '../_nav'
-import { setSidebarShow } from 'src/store/appSlice'
+import { setSidebarShow, setSidebarUnfoldable } from 'src/store/appSlice'
+import { getSidebarUnfoldable } from 'src/store/appSlice'
+
 
 const AppSidebar = () => {
   const dispatch = useDispatch()
-  const unfoldable = useSelector((state) => state.sidebarUnfoldable) //Esta es la flechita de abajo crear funcion de setUnfoldable en el appslice como con sidebarshow
-  const sidebarShow = useSelector((state) => state.app.ui.sidebarShow); //Esto lo ideal que se meta en el appSlice
+  const unfoldable = useSelector((state) => getSidebarUnfoldable(state))
+  const sidebarShow = useSelector((state) => state.sidebarShow)
 
   return (
     <CSidebar
@@ -41,7 +43,7 @@ const AppSidebar = () => {
       </CSidebarNav>
       <CSidebarToggler
         className="d-none d-lg-flex"
-        onClick={() => dispatch({ type: 'set', sidebarUnfoldable: !unfoldable })}
+        onClick={() => dispatch(setSidebarUnfoldable(!unfoldable))}
       />
     </CSidebar>
   )
