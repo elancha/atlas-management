@@ -18,9 +18,8 @@ import { setSidebarShow } from 'src/store/appSlice'
 
 const AppSidebar = () => {
   const dispatch = useDispatch()
-  const unfoldable = useSelector((state) => state.sidebarUnfoldable)
-  //const sidebarShow = useSelector((state) => state.sidebarShow)
-  const sidebarShow = useSelector((state) => state.ui.sidebarShow);
+  const unfoldable = useSelector((state) => state.sidebarUnfoldable) //Esta es la flechita de abajo crear funcion de setUnfoldable en el appslice como con sidebarshow
+  const sidebarShow = useSelector((state) => state.app.ui.sidebarShow); //Esto lo ideal que se meta en el appSlice
 
   return (
     <CSidebar
@@ -28,7 +27,6 @@ const AppSidebar = () => {
       unfoldable={unfoldable}
       visible={sidebarShow}
       onVisibleChange={(visible) => {
-        //dispatch({ type: 'set', sidebarShow: visible })
         dispatch(setSidebarShow(visible));
       }}
     >

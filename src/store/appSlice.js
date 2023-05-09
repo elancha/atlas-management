@@ -79,4 +79,7 @@ export const hasExpired = (state) => {
   return Date.now() > state.app.auth.userInfo.exp * 1000
 }
 
+//UI
+//Poner aqui lo del setSidebarShow del appsidebar
+
 export default appSlice.reducer

@@ -21,14 +21,14 @@ import { Row, Col } from 'react-bootstrap'
 
 const AppHeader = () => {
   const dispatch = useDispatch()
-  const sidebarShow = useSelector((state) => state.sidebarShow)
+  const sidebarShow = useSelector((state) => state.sidebarShow) //Cambiar esto para que funcione
 
   return (
     <CHeader position="sticky" className="mb-4">
-      {/* <CContainer fluid>
+      <CContainer fluid>
         <CHeaderToggler
           className="ps-1"
-          onClick={() => dispatch({ type: 'set', sidebarShow: !sidebarShow })}
+          onClick={() => dispatch({ type: 'set', sidebarShow: !sidebarShow })} //Cambiar esto para que funcione
         >
           <CIcon icon={cilMenu} size="lg" />
         </CHeaderToggler>
@@ -68,7 +68,7 @@ const AppHeader = () => {
         <CHeaderNav className="ms-3">
           <AppHeaderDropdown />
         </CHeaderNav>
-      </CContainer> */}
+      </CContainer>
       <CHeaderDivider />
       <CContainer fluid>
         <AppBreadcrumb />
