@@ -14,10 +14,13 @@ import 'simplebar/dist/simplebar.min.css'
 
 // sidebar nav config
 import navigation from '../_nav'
+import { setSidebarShow, setSidebarUnfoldable } from 'src/store/appSlice'
+import { getSidebarUnfoldable } from 'src/store/appSlice'
+
 
 const AppSidebar = () => {
   const dispatch = useDispatch()
-  const unfoldable = useSelector((state) => state.sidebarUnfoldable)
+  const unfoldable = useSelector((state) => getSidebarUnfoldable(state))
   const sidebarShow = useSelector((state) => state.sidebarShow)
 
   return (
@@ -26,7 +29,7 @@ const AppSidebar = () => {
       unfoldable={unfoldable}
       visible={sidebarShow}
       onVisibleChange={(visible) => {
-        dispatch({ type: 'set', sidebarShow: visible })
+        dispatch(setSidebarShow(visible));
       }}
     >
       <CSidebarBrand className="d-none d-md-flex" to="/">
@@ -40,7 +43,7 @@ const AppSidebar = () => {
       </CSidebarNav>
       <CSidebarToggler
         className="d-none d-lg-flex"
-        onClick={() => dispatch({ type: 'set', sidebarUnfoldable: !unfoldable })}
+        onClick={() => dispatch(setSidebarUnfoldable(!unfoldable))}
       />
     </CSidebar>
   )

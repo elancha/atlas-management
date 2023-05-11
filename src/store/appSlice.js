@@ -36,7 +36,6 @@ export const appSlice = createSlice({
       state.auth.refreshToken = tokenInfo.refreshToken;
       state.auth.expires = Date.now() + 900*1000;
 
-
       state.auth.userInfo = {
         ...tokenInfo.userInfo,
       }
@@ -46,14 +45,21 @@ export const appSlice = createSlice({
       state.core = defaultState.core;
     },
 
-
-
     // Toasts
     pushToast: (state, action) => {
       state.ui.toasts.push(action.payload);
     },
     clearToasts: (state, action) => {
       state.ui.toasts = [];
+    },
+
+    //Mostrar y ocultar barra
+    setSidebarShow: (state, action) => {
+      state.ui.sidebarShow = action.payload;
+    },
+
+    setSidebarUnfoldable: (state, action) => {
+      state.ui.sidebarUnfoldable = action.payload;
     }
   }
 })
@@ -76,5 +82,9 @@ export const hasExpired = (state) => {
   if(!state.app.auth.userInfo) return true
   return Date.now() > state.app.auth.userInfo.exp * 1000
 }
+
+//UI
+export const getSidebarShow = (state) => state.app.ui.sidebarShow;
+export const getSidebarUnfoldable = (state) => state.app.ui.sidebarUnfoldable;
 
 export default appSlice.reducer
