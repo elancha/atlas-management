@@ -8,6 +8,15 @@ import {
     CCol,
     CFormCheck
 } from '@coreui/react'
+import { CButton } from '@coreui/react';
+
+const handleConfirm = () => {
+    if (window.confirm('¿Estás seguro de que deseas guardar los cambios?')) {
+
+      // Agregar lógica para guardar alumnos en BD
+      window.location.href = '/alumnos'; // Redirecciona a la lista de alumnos
+    }
+  };
 
 const AddAlumno = () => {
     return (
@@ -394,7 +403,64 @@ const AddAlumno = () => {
                 </CRow>
 
                 <hr />
+
+                {/* ========== TIPO DE PAGO ========== */}
+
+                <CRow className="mb-3">
+                    <CCol md="2">
+                        <CFormLabel>Tipo de Pago:</CFormLabel>
+                    </CCol>
+                    <CCol md="10">
+                        <div>
+                            <CFormCheck
+                                type="radio"
+                                id="una_cuota"
+                                name="cuota"
+                                value="una_cuota"
+                                label="Una Cuota"
+                            />
+                            <CFormCheck
+                                type="radio"
+                                id="dos_cuota"
+                                name="cuota"
+                                value="una_cuota"
+                                label="Dos Cuotas"
+                            />
+                            <CFormCheck
+                                type="radio"
+                                id="tres_cuotas"
+                                name="cuota"
+                                value="tres_cuotas"
+                                label="Tres Cuotas"
+                            />
+                            <CFormCheck
+                                type="radio"
+                                id="mensual"
+                                name="cuota"
+                                value="mensual"
+                                label="Mensual"
+                            />
+                        </div>
+                    </CCol>
+                </CRow>
+
+                {/* ========== OBSERVACIONES ========== */}
+
+                <CRow className="mb-3">
+                    <CCol md="2">
+                        <CFormLabel htmlFor="observaciones">Observaciones:</CFormLabel>
+                    </CCol>
+                    <CCol md="10">
+                        <CFormTextarea
+                            id="observaciones"
+                            rows={3}
+                     />
+                    </CCol>
+                </CRow>
             </CForm>
+            <CButton color="primary" onClick={handleConfirm}>
+                Guardar y volver a la lista de alumnos
+            </CButton>
         </>
     )
 }
