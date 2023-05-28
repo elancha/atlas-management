@@ -5,8 +5,10 @@ import {
     CFormLabel,
     CRow,
     CCol,
+    CButton
 } from '@coreui/react'
-import { CButton } from '@coreui/react';
+import HourPicker from 'src/components/HourPicker';
+import WeekdayPicker from 'src/components/WeekdayPicker';
 
 const handleConfirm = () => {
     if (window.confirm('¿Estás seguro de que deseas guardar los cambios?')) {
@@ -36,16 +38,8 @@ const AddClan = () => {
                     <CCol md="2">
                         <CFormLabel htmlFor="diaClan">Día de la semana:</CFormLabel>
                     </CCol>
-                    <CCol md="10">
-                        <select className="dia_semana_clan" aria-label="Seleccionar dia de la semana">
-                            <option selected value="lunes">Lunes</option>
-                            <option value="martes">Martes</option>
-                            <option value="miercoles">Miércoles</option>
-                            <option value="jueves">Jueves</option>
-                            <option value="viernes">Viernes</option>
-                            <option value="sabado">Sábado</option>
-                            <option value="domingo">Domingo</option>
-                        </select>
+                    <CCol md="4">
+                        <WeekdayPicker />
                     </CCol>
                 </CRow>
                 <CRow className="mb-3">
@@ -53,73 +47,13 @@ const AddClan = () => {
                         <CFormLabel htmlFor="horaInicioClan">Hora Inicio:</CFormLabel>
                     </CCol>
                     <CCol md="4">
-                        <select className="hora_inicio_clan" aria-label="Seleccionar hora de inicio">
-                            <option selected value="ini_1000">10:00</option>
-                            <option value="ini_1030">10:30</option>
-                            <option value="ini_1100">11:00</option>
-                            <option value="ini_1130">11:30</option>
-                            <option value="ini_1200">12:00</option>
-                            <option value="ini_1230">12:30</option>
-                            <option value="ini_1300">13:00</option>
-                            <option value="ini_1330">13:30</option>
-                            <option value="ini_1400">14:00</option>
-                            <option value="ini_1430">14:30</option>
-                            <option value="ini_1500">15:00</option>
-                            <option value="ini_1530">15:30</option>
-                            <option value="ini_1600">16:00</option>
-                            <option value="ini_1630">16:30</option>
-                            <option value="ini_1700">17:00</option>
-                            <option value="ini_1730">17:30</option>
-                            <option value="ini_1800">18:00</option>
-                            <option value="ini_1830">18:30</option>
-                            <option value="ini_1900">19:00</option>
-                            <option value="ini_1930">19:30</option>
-                            <option value="ini_2000">20:00</option>
-                            <option value="ini_2030">20:30</option>
-                            <option value="ini_2100">21:00</option>
-                            <option value="ini_2130">21:30</option>
-                            <option value="ini_2200">22:00</option>
-                            <option value="ini_2230">22:30</option>
-                            <option value="ini_2300">23:00</option>
-                            <option value="ini_2330">23:30</option>
-                            <option value="ini_0000">00:00</option>
-                        </select>
+                        <HourPicker className='hora_inicio' />
                     </CCol>
                     <CCol md="2">
                         <CFormLabel htmlFor="horaFinClan">Hora Fin:</CFormLabel>
                     </CCol>
                     <CCol md="4">
-                    <select className="hora_fin_clan" aria-label="Seleccionar hora de fin">
-                            <option selected value="fin_1000">10:00</option>
-                            <option value="fin_1030">10:30</option>
-                            <option value="fin_1100">11:00</option>
-                            <option value="fin_1130">11:30</option>
-                            <option value="fin_1200">12:00</option>
-                            <option value="fin_1230">12:30</option>
-                            <option value="fin_1300">13:00</option>
-                            <option value="fin_1330">13:30</option>
-                            <option value="fin_1400">14:00</option>
-                            <option value="fin_1430">14:30</option>
-                            <option value="fin_1500">15:00</option>
-                            <option value="fin_1530">15:30</option>
-                            <option value="fin_1600">16:00</option>
-                            <option value="fin_1630">16:30</option>
-                            <option value="fin_1700">17:00</option>
-                            <option value="fin_1730">17:30</option>
-                            <option value="fin_1800">18:00</option>
-                            <option value="fin_1830">18:30</option>
-                            <option value="fin_1900">19:00</option>
-                            <option value="fin_1930">19:30</option>
-                            <option value="fin_2000">20:00</option>
-                            <option value="fin_2030">20:30</option>
-                            <option value="fin_2100">21:00</option>
-                            <option value="fin_2130">21:30</option>
-                            <option value="fin_2200">22:00</option>
-                            <option value="fin_2230">22:30</option>
-                            <option value="fin_2300">23:00</option>
-                            <option value="fin_2330">23:30</option>
-                            <option value="fin_0000">00:00</option>
-                        </select>
+                        <HourPicker className='hora_fin' />
                     </CCol>
                 </CRow>
 
