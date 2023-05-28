@@ -41,17 +41,17 @@ const Asistencia = () => {
                         <CTableBody>
                             <CTableRow onClick={() => navigate('/asistencia/ficha')}> {/* Esto es incorrecto pero es solo para que visualmente se vea lo que quiero hacer. */}
                                 { /* Datos Falsos - Alumno 1 */ }
-                                <CTableDataCell>Abel Cid Outlaw</CTableDataCell>
-                                <CTableDataCell>Beskari</CTableDataCell>
-                                <CTableDataCell>0</CTableDataCell>
-                                <CTableDataCell>0</CTableDataCell>
-                            </CTableRow>
-                            <CTableRow>
-                                { /* Datos Falsos - Alumno 2 */ }
                                 <CTableDataCell>Ana Lancha Cañas</CTableDataCell>
                                 <CTableDataCell>Rapsodia</CTableDataCell>
                                 <CTableDataCell>17</CTableDataCell>
                                 <CTableDataCell>39%</CTableDataCell>
+                            </CTableRow>
+                            <CTableRow>
+                                { /* Datos Falsos - Alumno 2 */ }
+                                <CTableDataCell>Abel Cid Outlaw</CTableDataCell>
+                                <CTableDataCell>Beskari</CTableDataCell>
+                                <CTableDataCell>0</CTableDataCell>
+                                <CTableDataCell>0</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
                                 { /* Datos Falsos - Alumno 3 */ }
@@ -61,21 +61,21 @@ const Asistencia = () => {
                                 <CTableDataCell>15%</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                            { /* Datos Falsos - Alumno 4 */ }
+                                { /* Datos Falsos - Alumno 4 */ }
                                 <CTableDataCell>Carlos Fernández Escobar</CTableDataCell>
                                 <CTableDataCell>Rapsodia</CTableDataCell>
                                 <CTableDataCell>26</CTableDataCell>
                                 <CTableDataCell>37%</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                            { /* Datos Falsos - Alumno 5 */ }
+                                { /* Datos Falsos - Alumno 5 */ }
                                 <CTableDataCell>Ariadna Zamora Solana</CTableDataCell>
                                 <CTableDataCell>Legión 404</CTableDataCell>
                                 <CTableDataCell>47</CTableDataCell>
                                 <CTableDataCell>85%</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                            { /* Datos Falsos - Alumno 6 */ }
+                                { /* Datos Falsos - Alumno 6 */ }
                                 <CTableDataCell>Asier Gómez Caballero</CTableDataCell>
                                 <CTableDataCell>Michiclorianos</CTableDataCell>
                                 <CTableDataCell>3</CTableDataCell>
