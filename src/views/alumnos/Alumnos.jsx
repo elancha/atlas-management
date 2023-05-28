@@ -18,6 +18,11 @@ const Alumnos = () => {
     const navigate = useNavigate();
     return (
         <>
+            <CContainer className="d-grid gap-2 d-md-flex justify-content-md-end p-2">
+                <CButton className="me-md-2" color="primary" type="button" onClick={() => navigate('/alumnos/add')}>
+                    Añadir Alumno
+                </CButton>
+            </CContainer>
             <CCard>
                 <CCardHeader align="middle">
                     <strong>Lista de Alumnos</strong>
@@ -96,11 +101,6 @@ const Alumnos = () => {
                     </CTable>
                 </CCardBody>
             </CCard>
-            <CContainer className="d-grid gap-2 d-md-flex justify-content-md-end p-2">
-                <CButton className="me-md-2" color="primary" type="button" onClick={() => navigate('/alumnos/add')}>
-                    Añadir Alumno
-                </CButton>
-            </CContainer>
         </>
     )
 }
