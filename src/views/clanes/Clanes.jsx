@@ -19,13 +19,13 @@ const Clanes = () => {
     return (
         <>
             <CContainer className="d-grid gap-2 d-md-flex justify-content-md-end p-2">
-                <CButton className="me-md-2" color="primary" type="button" onClick={() => navigate('/alumnos/add')}>
+                <CButton className="me-md-2" color="primary" type="button" onClick={() => navigate('/clanes/add')}>
                     Añadir Clan
                 </CButton>
             </CContainer>
             <CCard>
                 <CCardHeader align="middle">
-                    <strong>Lista de Alumnos</strong>
+                    <strong>Lista de Clanes</strong>
                 </CCardHeader>
                 <CCardBody>
                     <CTable hover>
@@ -35,67 +35,76 @@ const Clanes = () => {
                                     Nombre
                                 </CTableHeaderCell>
                                 <CTableHeaderCell scope='col' className='w-auto'>
-                                    Apellidos
+                                    Día
                                 </CTableHeaderCell>
                                 <CTableHeaderCell scope='col' className='w-auto'>
-                                    DNI
+                                    Horario
                                 </CTableHeaderCell>
                                 <CTableHeaderCell scope='col' className='w-auto'>
-                                    Fecha de Nacimiento
+                                    Escuela
                                 </CTableHeaderCell>
                                 <CTableHeaderCell scope='col' className='w-auto'>
-                                    Clan Principal
+                                    Estilo
+                                </CTableHeaderCell>
+                                <CTableHeaderCell scope='col' className='w-auto'>
+                                    Instructor Principal
                                 </CTableHeaderCell>
                             </CTableRow>
                         </CTableHead>
                         <CTableBody>
-                            <CTableRow onClick={() => navigate('/alumnos/ficha')}> {/* Esto es incorrecto pero es solo para que visualmente se vea lo que quiero hacer. */}
-                                { /* Datos Falsos - Alumno 1 */ }
-                                <CTableDataCell>Raúl</CTableDataCell>
-                                <CTableDataCell>Pérez Martínez</CTableDataCell>
-                                <CTableDataCell>00000000A</CTableDataCell>
-                                <CTableDataCell>20/04/1991</CTableDataCell>
-                                <CTableDataCell>Black Spiral</CTableDataCell>
-                            </CTableRow>
-                            <CTableRow>
-                                { /* Datos Falsos - Alumno 2 */ }
-                                <CTableDataCell>Ana</CTableDataCell>
-                                <CTableDataCell>Lancha Cañas</CTableDataCell>
-                                <CTableDataCell>00000000B</CTableDataCell>
-                                <CTableDataCell>31/01/1980</CTableDataCell>
+                            <CTableRow onClick={() => navigate('/clanes/ficha')}> {/* Esto es incorrecto pero es solo para que visualmente se vea lo que quiero hacer. */}
+                                { /* Datos Falsos - Clan 1 */ }
                                 <CTableDataCell>Rapsodia</CTableDataCell>
+                                <CTableDataCell>Lunes</CTableDataCell>
+                                <CTableDataCell>20:00 - 22:00</CTableDataCell>
+                                <CTableDataCell>Ludolandia</CTableDataCell>
+                                <CTableDataCell>Forma 4</CTableDataCell>
+                                <CTableDataCell>Carlos Jiménez</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                                { /* Datos Falsos - Alumno 3 */ }
-                                <CTableDataCell>Paula</CTableDataCell>
-                                <CTableDataCell>González Muñoz</CTableDataCell>
-                                <CTableDataCell>00000000C</CTableDataCell>
-                                <CTableDataCell>22/03/1984</CTableDataCell>
-                                <CTableDataCell>Black Spiral</CTableDataCell>
+                                { /* Datos Falsos - Clan 2 */ }
+                                <CTableDataCell>Berserkers</CTableDataCell>
+                                <CTableDataCell>Martes</CTableDataCell>
+                                <CTableDataCell>20:00 - 22:00</CTableDataCell>
+                                <CTableDataCell>Ludolandia</CTableDataCell>
+                                <CTableDataCell>Forma 2</CTableDataCell>
+                                <CTableDataCell>Darío Jusdado</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                            { /* Datos Falsos - Alumno 4 */ }
-                                <CTableDataCell>David</CTableDataCell>
-                                <CTableDataCell>Rubio Lora</CTableDataCell>
-                                <CTableDataCell>00000000D</CTableDataCell>
-                                <CTableDataCell>15/01/1987</CTableDataCell>
-                                <CTableDataCell>Black Spiral</CTableDataCell>
+                                { /* Datos Falsos - Clan 3 */ }
+                                <CTableDataCell>Amarok</CTableDataCell>
+                                <CTableDataCell>Lunes</CTableDataCell>
+                                <CTableDataCell>20:00 - 22:00</CTableDataCell>
+                                <CTableDataCell>Tres Cantos</CTableDataCell>
+                                <CTableDataCell>Forma 1</CTableDataCell>
+                                <CTableDataCell>Raúl Pérez</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                            { /* Datos Falsos - Alumno 5 */ }
-                                <CTableDataCell>Victor</CTableDataCell>
-                                <CTableDataCell>Rabadán Gallego</CTableDataCell>
-                                <CTableDataCell>00000000E</CTableDataCell>
-                                <CTableDataCell>10/10/1987</CTableDataCell>
-                                <CTableDataCell>Black Spiral</CTableDataCell>
+                            { /* Datos Falsos - Clan 4 */ }
+                                <CTableDataCell>Beskari</CTableDataCell>
+                                <CTableDataCell>Miércoles</CTableDataCell>
+                                <CTableDataCell>20:00 - 23:00</CTableDataCell>
+                                <CTableDataCell>Ludolandia</CTableDataCell>
+                                <CTableDataCell>Curso Ypsilon</CTableDataCell>
+                                <CTableDataCell>José Campos</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                            { /* Datos Falsos - Alumno 6 */ }
-                                <CTableDataCell>Natalia</CTableDataCell>
-                                <CTableDataCell>López Martínez</CTableDataCell>
-                                <CTableDataCell>00000000F</CTableDataCell>
-                                <CTableDataCell>30/03/1987</CTableDataCell>
-                                <CTableDataCell>Senkai</CTableDataCell>
+                            { /* Datos Falsos - Clan 5 */ }
+                                <CTableDataCell>Michiclorianos</CTableDataCell>
+                                <CTableDataCell>Miércoles</CTableDataCell>
+                                <CTableDataCell>19:00 - 21:00</CTableDataCell>
+                                <CTableDataCell>Fuenlabrada</CTableDataCell>
+                                <CTableDataCell>Forma 1</CTableDataCell>
+                                <CTableDataCell>Álvaro Ramos</CTableDataCell>
+                            </CTableRow>
+                            <CTableRow>
+                            { /* Datos Falsos - Clan 6 */ }
+                                <CTableDataCell>Midnight</CTableDataCell>
+                                <CTableDataCell>Domingo</CTableDataCell>
+                                <CTableDataCell>10:00 - 12:00</CTableDataCell>
+                                <CTableDataCell>Delicias</CTableDataCell>
+                                <CTableDataCell>Forma 1</CTableDataCell>
+                                <CTableDataCell>Raúl Miguélez</CTableDataCell>
                             </CTableRow>
                         </CTableBody>
                     </CTable>
