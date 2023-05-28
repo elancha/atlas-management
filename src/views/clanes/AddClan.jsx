@@ -2,7 +2,6 @@ import React from 'react'
 import { 
     CForm, 
     CFormInput,
-    CFormTextarea,
     CFormLabel,
     CRow,
     CCol,
@@ -21,27 +20,24 @@ const AddClan = () => {
     return (
         <>
             <CForm>
-
-                {/* ========== DATOS DEL ALUMNO ========== */}
-
                 <CRow className="mb-3">
                     <CCol md="2">
-                        <CFormLabel htmlFor="nombre">Nombre:</CFormLabel>
+                        <CFormLabel htmlFor="nombreClan">Nombre:</CFormLabel>
                     </CCol>
                     <CCol md="10">
                         <CFormInput
                             type='text'
-                            id='nombre'
+                            id='nombre_clan'
                             placeholder='Nombre del Clan'
                         />
                     </CCol>
                 </CRow>
                 <CRow className="mb-3">
                     <CCol md="2">
-                        <CFormLabel htmlFor="dia">Día de la semana:</CFormLabel>
+                        <CFormLabel htmlFor="diaClan">Día de la semana:</CFormLabel>
                     </CCol>
                     <CCol md="10">
-                        <select className="form-select" aria-label="Seleccionar dia de la semana">
+                        <select className="dia_semana_clan" aria-label="Seleccionar dia de la semana">
                             <option selected value="lunes">Lunes</option>
                             <option value="martes">Martes</option>
                             <option value="miercoles">Miércoles</option>
@@ -54,10 +50,10 @@ const AddClan = () => {
                 </CRow>
                 <CRow className="mb-3">
                     <CCol md="2">
-                        <CFormLabel htmlFor="dni">Hora Inicio:</CFormLabel>
+                        <CFormLabel htmlFor="horaInicioClan">Hora Inicio:</CFormLabel>
                     </CCol>
                     <CCol md="4">
-                        <select className="form-select" aria-label="Seleccionar hora de inicio">
+                        <select className="hora_inicio_clan" aria-label="Seleccionar hora de inicio">
                             <option selected value="ini_1000">10:00</option>
                             <option value="ini_1030">10:30</option>
                             <option value="ini_1100">11:00</option>
@@ -90,10 +86,10 @@ const AddClan = () => {
                         </select>
                     </CCol>
                     <CCol md="2">
-                        <CFormLabel htmlFor="fechaNac">Hora Fin:</CFormLabel>
+                        <CFormLabel htmlFor="horaFinClan">Hora Fin:</CFormLabel>
                     </CCol>
                     <CCol md="4">
-                    <select className="form-select" aria-label="Seleccionar hora de fin">
+                    <select className="hora_fin_clan" aria-label="Seleccionar hora de fin">
                             <option selected value="fin_1000">10:00</option>
                             <option value="fin_1030">10:30</option>
                             <option value="fin_1100">11:00</option>
@@ -129,10 +125,10 @@ const AddClan = () => {
 
                 <CRow className="mb-3">
                     <CCol col="4">
-                        <CFormLabel htmlFor="dni">Escuela:</CFormLabel>
+                        <CFormLabel htmlFor="escuela">Escuela:</CFormLabel>
                     </CCol>
                     <CCol col="4">
-                        <select className="form-select" aria-label="Seleccionar la escuela">
+                        <select className="escuela" aria-label="Seleccionar la escuela">
                             <option selected value="ludolandia">Ludolandia</option>
                             <option value="delicias">Delicias</option>
                             <option value="fuenlabrada">Fuenlabrada</option>
@@ -144,10 +140,10 @@ const AddClan = () => {
                         </select>
                     </CCol>
                     <CCol col="4">
-                        <CFormLabel htmlFor="fechaNac">Estilo:</CFormLabel>
+                        <CFormLabel htmlFor="estilo">Estilo:</CFormLabel>
                     </CCol>
                     <CCol col="4">
-                        <select className="form-select" aria-label="Seleccionar estilo">
+                        <select className="estilo" aria-label="Seleccionar estilo">
                             <option selected value="f1">Forma 1</option>
                             <option value="f2">Forma 2</option>
                             <option value="ypsilon">Curso Ypsilon</option>
@@ -166,7 +162,7 @@ const AddClan = () => {
                         <CFormLabel htmlFor="instructor">Instructor:</CFormLabel>
                     </CCol>
                     <CCol col="4">
-                        <select className="form-select" aria-label="Seleccionar al instructor">
+                        <select className="instructor" aria-label="Seleccionar al instructor">
                             <option selected value="alastor">Alejandro Alonso</option>
                             <option value="culito">Álvaro Ramos</option>
                             <option value="belen">Belén Peñalver</option>
