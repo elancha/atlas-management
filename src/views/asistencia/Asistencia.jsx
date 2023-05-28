@@ -3,18 +3,17 @@ import {
     CCard, 
     CCardBody, 
     CCardHeader, 
-    CContainer, 
     CTable, 
     CTableBody, 
     CTableDataCell, 
     CTableHead, 
     CTableHeaderCell, 
     CTableRow,
-    CButton,
  } from '@coreui/react'
 import { useNavigate } from 'react-router-dom';
 
 const Asistencia = () => {
+    const navigate = useNavigate();
     return (
         <>
             <CCard>
@@ -40,53 +39,47 @@ const Asistencia = () => {
                             </CTableRow>
                         </CTableHead>
                         <CTableBody>
-                            <CTableRow onClick={() => navigate('/escuelas/ficha')}> {/* Esto es incorrecto pero es solo para que visualmente se vea lo que quiero hacer. */}
-                                { /* Datos Falsos - Escuela 1 */ }
-                                <CTableDataCell>Ludolandia</CTableDataCell>
-                                <CTableDataCell>C/ Miguel Fleta, nº4</CTableDataCell>
-                                <CTableDataCell>Laura Yepes</CTableDataCell>
-                                <CTableDataCell>10</CTableDataCell>
-                                <CTableDataCell>12</CTableDataCell>
+                            <CTableRow onClick={() => navigate('/asistencia/ficha')}> {/* Esto es incorrecto pero es solo para que visualmente se vea lo que quiero hacer. */}
+                                { /* Datos Falsos - Alumno 1 */ }
+                                <CTableDataCell>Abel Cid Outlaw</CTableDataCell>
+                                <CTableDataCell>Beskari</CTableDataCell>
+                                <CTableDataCell>0</CTableDataCell>
+                                <CTableDataCell>0</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                                { /* Datos Falsos - Escuela 2 */ }
-                                <CTableDataCell>Fuenlabrada</CTableDataCell>
-                                <CTableDataCell>C/ Miguel Fleta, nº4</CTableDataCell>
-                                <CTableDataCell>Laura Yepes</CTableDataCell>
-                                <CTableDataCell>10</CTableDataCell>
-                                <CTableDataCell>12</CTableDataCell>
+                                { /* Datos Falsos - Alumno 2 */ }
+                                <CTableDataCell>Ana Lancha Cañas</CTableDataCell>
+                                <CTableDataCell>Rapsodia</CTableDataCell>
+                                <CTableDataCell>17</CTableDataCell>
+                                <CTableDataCell>39%</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                                { /* Datos Falsos - Escuela 3 */ }
-                                <CTableDataCell>Ludolandia</CTableDataCell>
-                                <CTableDataCell>Colegio Altamira - C/ Gerona Nº4</CTableDataCell>
-                                <CTableDataCell>Alejandro Alonso</CTableDataCell>
-                                <CTableDataCell>12</CTableDataCell>
-                                <CTableDataCell>2</CTableDataCell>
+                                { /* Datos Falsos - Alumno 3 */ }
+                                <CTableDataCell>Antonio Guillo Saez</CTableDataCell>
+                                <CTableDataCell>Black Spiral</CTableDataCell>
+                                <CTableDataCell>4</CTableDataCell>
+                                <CTableDataCell>15%</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                            { /* Datos Falsos - Escuela 4 */ }
-                                <CTableDataCell>Delicias</CTableDataCell>
-                                <CTableDataCell>Centro Deportivo Cultural Delicias - Pº de las Delicias Nº 61</CTableDataCell>
-                                <CTableDataCell>Esther Lancha</CTableDataCell>
-                                <CTableDataCell>15</CTableDataCell>
-                                <CTableDataCell>2</CTableDataCell>
+                            { /* Datos Falsos - Alumno 4 */ }
+                                <CTableDataCell>Carlos Fernández Escobar</CTableDataCell>
+                                <CTableDataCell>Rapsodia</CTableDataCell>
+                                <CTableDataCell>26</CTableDataCell>
+                                <CTableDataCell>37%</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                            { /* Datos Falsos - Escuela 5 */ }
-                                <CTableDataCell>Rivas-Vaciamadrid</CTableDataCell>
-                                <CTableDataCell>Escena Studio - C/ Cincel Nº 11</CTableDataCell>
-                                <CTableDataCell>Bárbara Valverde</CTableDataCell>
-                                <CTableDataCell>12</CTableDataCell>
-                                <CTableDataCell>1</CTableDataCell>
+                            { /* Datos Falsos - Alumno 5 */ }
+                                <CTableDataCell>Ariadna Zamora Solana</CTableDataCell>
+                                <CTableDataCell>Legión 404</CTableDataCell>
+                                <CTableDataCell>47</CTableDataCell>
+                                <CTableDataCell>85%</CTableDataCell>
                             </CTableRow>
                             <CTableRow>
-                            { /* Datos Falsos - Escuela 6 */ }
-                                <CTableDataCell>Tres Cantos</CTableDataCell>
-                                <CTableDataCell>Polideportivo La Luz - Avda. La Luz S/N</CTableDataCell>
-                                <CTableDataCell>Raúl Pérez</CTableDataCell>
-                                <CTableDataCell>8</CTableDataCell>
-                                <CTableDataCell>1</CTableDataCell>
+                            { /* Datos Falsos - Alumno 6 */ }
+                                <CTableDataCell>Asier Gómez Caballero</CTableDataCell>
+                                <CTableDataCell>Michiclorianos</CTableDataCell>
+                                <CTableDataCell>3</CTableDataCell>
+                                <CTableDataCell>11%</CTableDataCell>
                             </CTableRow>
                         </CTableBody>
                     </CTable>
