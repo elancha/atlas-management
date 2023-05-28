@@ -15,8 +15,10 @@ const routes = [
   { path: '/alumnos/add', name: 'AddAlumno', element: AddAlumno },
   { path: '/alumnos/ficha', name: 'FichaAlumno', element: FichaAlumno },
   { path: '/clanes', name: 'Clanes', element: Clanes },
+  { path: '/clanes/add', name: 'AddClan', element: AddClan },
   { path: '/escuelas', name: 'Escuelas', element: Escuelas },
   { path: '/asistencia', name: 'Asistencia', element: Asistencia },
+
 ]
 
 export default routes
