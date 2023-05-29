@@ -27,8 +27,8 @@ const FichaAlumno = () => {
 
         <p><strong>Dirección:</strong> Calle calle, nº1 1ºA</p>
         <div style={{ display: 'flex', flexDirection: 'row' }}>
-                    <p><strong>Código Postal:</strong> 28000</p>
-                    <p style={{ marginLeft: '20px' }}><strong>Población:</strong> Madrid</p>
+            <p><strong>Código Postal:</strong> 28000</p>
+            <p style={{ marginLeft: '20px' }}><strong>Población:</strong> Madrid</p>
         </div>
 
         <p><strong>Patología médica a destacar:</strong></p>
@@ -43,14 +43,10 @@ const FichaAlumno = () => {
 
         <hr />
 
-      <p><strong>Información de las Clases:</strong></p>
+        <p><strong>Información de las Clases:</strong></p>
 
-      <p>
-        <strong>Tipo de Pago seleccionado:</strong> 
-      </p>
-      <p>
-        <strong>Observaciones:</strong> 
-      </p>
+        <p><strong>Tipo de Pago seleccionado:</strong> </p>
+        <p><strong>Observaciones:</strong> </p>
     </div>
   );
 };
