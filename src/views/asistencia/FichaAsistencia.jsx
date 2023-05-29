@@ -12,7 +12,7 @@ import {
     CTableDataCell,
     CTableHead,
     CTableHeaderCell,
-    CTableRow
+    CTableRow,
 } from '@coreui/react';
 import YearPicker from 'src/components/YearPicker';
 import MonthPicker from 'src/components/MonthPicker';
@@ -79,7 +79,7 @@ const FichaAsistencia = () => {
 
                         { /* Body de la tabla*/ }
                         <CTableBody>
-                            <CTableRow onClick={() => navigate('/clanes/ficha')}> {/* Esto es incorrecto pero es solo para que visualmente se vea lo que quiero hacer. */}
+                            <CTableRow>
                                 { /* Datos Falsos - Falta 1 */ }
                                 <CTableDataCell>Black Spiral</CTableDataCell>
                                 <CTableDataCell>01/10/2022</CTableDataCell>
