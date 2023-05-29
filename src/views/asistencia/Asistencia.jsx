@@ -9,6 +9,8 @@ import {
     CTableHead, 
     CTableHeaderCell, 
     CTableRow,
+    CButton,
+    CContainer
  } from '@coreui/react'
 import { useNavigate } from 'react-router-dom';
 
@@ -16,6 +18,11 @@ const Asistencia = () => {
     const navigate = useNavigate();
     return (
         <>
+            <CContainer className="d-grid gap-2 d-md-flex justify-content-md-end p-2">
+                <CButton className="me-md-2" color="primary" type="button" onClick={() => navigate('/asistencia/lista')}>
+                    Pasar Lista
+                </CButton>
+            </CContainer>
             <CCard>
                 <CCardHeader align="middle">
                     <strong>Faltas de Asistencia</strong>
