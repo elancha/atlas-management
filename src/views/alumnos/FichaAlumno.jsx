@@ -10,7 +10,7 @@ const FichaAlumno = () => {
         <h2>Ficha del Alumno</h2>
         <br />
         <div style={{ display: 'flex', alignItems: 'center' }}>
-            <CImage rounded thumbnail src={require('../../assets/images/ana.png').default} width={200} height={200} />
+            <CImage rounded thumbnail src={require('../../assets/images/ana.jpg').default} width={200} height={200} />
             <div style={{ marginLeft: '10px' }}>
                 <p><strong>Nombre Completo:</strong> Raúl Pérez Martínez</p>
                 <p><strong>DNI / Pasaporte:</strong> 00000000A</p>

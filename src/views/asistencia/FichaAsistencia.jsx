@@ -28,7 +28,7 @@ const FichaAsistencia = () => {
     return (
         <>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                <CImage rounded thumbnail src={require('../../assets/images/ana.png').default} width={200} height={200} />
+                <CImage rounded thumbnail src="../../assets/images/ana.jpg" width={200} height={200} />
                 <h1 style={{ marginLeft: '10px' }}>Ana Lancha Cañas</h1>
             </div>
 
