@@ -18,6 +18,7 @@ import {
     CContainer
 } from '@coreui/react';
 import { useNavigate } from 'react-router-dom';
+import AsistenciaPicker from 'src/components/AsistenciaPicker';
 
 const PasarLista = () => {
     const [visible, setVisible] = useState(false)
@@ -57,6 +58,9 @@ const PasarLista = () => {
                     <CTable hover>
                         <CTableHead>
                             <CTableRow>
+                            <CTableHeaderCell scope='col' className='w-auto'>
+                                    Asistencia
+                                </CTableHeaderCell>
                                 <CTableHeaderCell scope='col' className='w-auto'>
                                     Nombre
                                 </CTableHeaderCell>
@@ -84,8 +88,9 @@ const PasarLista = () => {
                             </CTableRow>
                         </CTableHead>
                         <CTableBody>
-                            <CTableRow onClick={() => navigate('/asistencia/ficha')}> {/* Esto es incorrecto pero es solo para que visualmente se vea lo que quiero hacer. */}
+                            <CTableRow> {/* Esto es incorrecto pero es solo para que visualmente se vea lo que quiero hacer. */}
                                 { /* Datos Falsos - Alumno 1 */ }
+                                <CTableDataCell><AsistenciaPicker className='asistencia'/></CTableDataCell>
                                 <CTableDataCell>Abel Cid Outlaw</CTableDataCell>
                                 <CTableDataCell>Miércoles - 20:00-23:00</CTableDataCell>
                                 <CTableDataCell>Beskari</CTableDataCell>
@@ -97,6 +102,7 @@ const PasarLista = () => {
                             </CTableRow>
                             <CTableRow>
                                 { /* Datos Falsos - Alumno 2 */ }
+                                <CTableDataCell><AsistenciaPicker className='asistencia'/></CTableDataCell>
                                 <CTableDataCell>Alberto Urueña García</CTableDataCell>
                                 <CTableDataCell>Miércoles - 20:00-23:00</CTableDataCell>
                                 <CTableDataCell>Beskari</CTableDataCell>
@@ -108,6 +114,7 @@ const PasarLista = () => {
                             </CTableRow>
                             <CTableRow>
                                 { /* Datos Falsos - Alumno 3 */ }
+                                <CTableDataCell><AsistenciaPicker className='asistencia'/></CTableDataCell>
                                 <CTableDataCell>Bárbara Valverde Matanza</CTableDataCell>
                                 <CTableDataCell>Miércoles - 20:00-23:00</CTableDataCell>
                                 <CTableDataCell>Staff</CTableDataCell>
@@ -119,6 +126,7 @@ const PasarLista = () => {
                             </CTableRow>
                             <CTableRow>
                                 { /* Datos Falsos - Alumno 4 */ }
+                                <CTableDataCell><AsistenciaPicker className='asistencia'/></CTableDataCell>
                                 <CTableDataCell>Carlos Alberto Montoya Fermosel</CTableDataCell>
                                 <CTableDataCell>Miércoles - 20:00-23:00</CTableDataCell>
                                 <CTableDataCell>Beskari</CTableDataCell>
@@ -130,6 +138,7 @@ const PasarLista = () => {
                             </CTableRow>
                             <CTableRow>
                                 { /* Datos Falsos - Alumno 5 */ }
+                                <CTableDataCell><AsistenciaPicker className='asistencia'/></CTableDataCell>
                                 <CTableDataCell>Celia Alonso Callejón</CTableDataCell>
                                 <CTableDataCell>Miércoles - 20:00-23:00</CTableDataCell>
                                 <CTableDataCell>Staff</CTableDataCell>
@@ -141,6 +150,7 @@ const PasarLista = () => {
                             </CTableRow>
                             <CTableRow>
                                 { /* Datos Falsos - Alumno 6 */ }
+                                <CTableDataCell><AsistenciaPicker className='asistencia'/></CTableDataCell>
                                 <CTableDataCell>Diana Martínez Valle</CTableDataCell>
                                 <CTableDataCell>Miércoles - 20:00-23:00</CTableDataCell>
                                 <CTableDataCell>Doblaje</CTableDataCell>
