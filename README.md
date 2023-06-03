@@ -100,6 +100,9 @@ atlas-management
 **Esther Lancha**
 * <https://github.com/elancha>
 
+**CoreUI Team**
+* <https://github.com/coreui>
+
 ## Copyright and License
 
 copyright 2023 creativeLabs Esther Lancha.   
