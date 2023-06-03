@@ -79,7 +79,7 @@ export default function Login() {
                         <div className='row'>
                           <div className='col-12'>
                             <h1>Login</h1>
-                            <p className="text-medium-emphasis">Sign in to your account</p>
+                            <p className="text-medium-emphasis">Ingresa con tu cuenta</p>
                           </div>
 
                           <div className='col-12 mb-3'>
@@ -90,7 +90,7 @@ export default function Login() {
                                   <InputGroup.Text><Person size={20} /></InputGroup.Text>
                                   <FormControl
                                     id="email"
-                                    placeholder="Type your email"
+                                    placeholder="Correo electrónico"
                                     type="text"
                                     autoComplete="username"
                                     onChange={formik.handleChange}
@@ -111,12 +111,12 @@ export default function Login() {
                           <div className='col-12 mb-3'>
                             <div className="input-group">
                               <FormGroup>
-                                <FormLabel className="col-form-label">Password</FormLabel>
+                                <FormLabel className="col-form-label">Contraseña</FormLabel>
                                 <InputGroup className={formik.touched.password && formik.errors.password && 'is-invalid'}>
                                   <InputGroup.Text><Lock size={20} /></InputGroup.Text>
                                   <FormControl
                                     id="password"
-                                    placeholder="Type the password"
+                                    placeholder="Contraseña"
                                     type="password"
                                     autoComplete="current-password"
                                     onChange={formik.handleChange}
@@ -156,8 +156,8 @@ export default function Login() {
                       <div className='col-6 d-flex'>
                         <div className='row ms-3 ps-3 h-100 align-items-center border-start color-secondary'>
                           <div className='col-12'>
-                            <span className='d-block mb-3'>Having problems with your credentials?</span>
-                            <a onClick={() => navigate(`/recover${formik.values.email ? `?email=${formik.values.email}` : ""}`)} className="pointer text-medium-emphasis">Reset your password</a>
+                            <span className='d-block mb-3'>¿Tienes problemas para entrar?</span>
+                            <a onClick={() => navigate(`/recover${formik.values.email ? `?email=${formik.values.email}` : ""}`)} className="pointer text-medium-emphasis">Resetea tu contraseña</a>
                           </div>
                         </div>
                       </div>
