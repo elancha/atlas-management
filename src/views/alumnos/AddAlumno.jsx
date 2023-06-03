@@ -16,7 +16,7 @@ const handleConfirm = () => {
       // Agregar lógica para guardar alumnos en BD
       window.location.href = '/alumnos'; // Redirecciona a la lista de alumnos
     }
-  };
+};
 
 const AddAlumno = () => {
     return (

@@ -13,6 +13,7 @@ const FichaEscuela = React.lazy(() => import('./views/escuelas/FichaEscuela'))
 const Asistencia = React.lazy(() => import('./views/asistencia/Asistencia'))
 const FichaAsistencia = React.lazy(() => import('./views/asistencia/FichaAsistencia'))
 const PasarLista = React.lazy(() => import('./views/asistencia/PasarLista'))
+const Recuperaciones = React.lazy(() => import('./views/asistencia/Recuperaciones'))
 
 const routes = [
   { path: '/', exact: true, name: 'Home' },
@@ -29,6 +30,7 @@ const routes = [
   { path: '/asistencia', name: 'Asistencia', element: Asistencia },
   { path: '/asistencia/ficha', name: 'FichaAsistencia', element: FichaAsistencia },
   { path: '/asistencia/lista', name: 'PasarLista', element: PasarLista },
+  { path: '/asistencia/recuperaciones', name: 'Recuperaciones', element: Recuperaciones },
 ]
 
 export default routes
