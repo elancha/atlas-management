@@ -1,27 +1,21 @@
 [![@coreui coreui](https://img.shields.io/badge/@coreui%20-coreui-lightgrey.svg?style=flat-square)](https://github.com/coreui/coreui)
 [![npm package][npm-coreui-badge]][npm-coreui]
-[![NPM downloads][npm-coreui-download]][npm-coreui]  
 [![@coreui react](https://img.shields.io/badge/@coreui%20-react-lightgrey.svg?style=flat-square)](https://github.com/coreui/react)
 [![npm package][npm-coreui-react-badge]][npm-coreui-react]
-[![NPM downloads][npm-coreui-react-download]][npm-coreui-react]  
 
 [npm-coreui]: https://www.npmjs.com/package/@coreui/coreui
 [npm-coreui-badge]: https://img.shields.io/npm/v/@coreui/coreui.png?style=flat-square
-[npm-coreui-download]: https://img.shields.io/npm/dm/@coreui/coreui.svg?style=flat-square
 [npm-coreui-react]: https://www.npmjs.com/package/@coreui/react
 [npm-coreui-react-badge]: https://img.shields.io/npm/v/@coreui/react.png?style=flat-square
 [npm-coreui-react-download]: https://img.shields.io/npm/dm/@coreui/react.svg?style=flat-square
-[npm]: https://www.npmjs.com/package/@coreui/react
 
 # ATLAS Management App
 
-ATLAS Management App is a Web Page to do the asssistance control to the classes for LudoSport Atlas.
+ATLAS Management App is a Web Page to do the assistance control to the classes for LudoSport Atlas.
 
 ## Table of Contents
 
 * [Versions](#versions)
-* [CoreUI Pro](#coreui-pro)
-* [Quick Start](#quick-start)
 * [Installation](#installation)
 * [Basic usage](#basic-usage)
 * [What's included](#whats-included)
@@ -34,22 +28,7 @@ ATLAS Management App is a Web Page to do the asssistance control to the classes 
 
 ## Versions
 
-* [CoreUI Free Bootstrap Admin Template](https://github.com/coreui/coreui-free-bootstrap-admin-template)
-* [CoreUI Free Angular Admin Template](https://github.com/coreui/coreui-free-angular-admin-template)
-* [CoreUI Free React.js Admin Template](https://github.com/coreui/coreui-free-react-admin-template)
-* [CoreUI Free Vue.js Admin Template](https://github.com/coreui/coreui-free-vue-admin-template)
-
-## CoreUI Pro
-
-* 💪  [CoreUI Pro Angular Admin Template](https://coreui.io/product/angular-dashboard-template/)
-* 💪  [CoreUI Pro Bootstrap Admin Template](https://coreui.io/product/bootstrap-dashboard-template/)
-* 💪  [CoreUI Pro React Admin Template](https://coreui.io/product/react-dashboard-template/)
-* 💪  [CoreUI Pro Vue Admin Template](https://coreui.io/product/vue-dashboard-template/)
-
-## Quick Start
-
-- [Download the latest release](https://github.com/coreui/coreui-free-react-admin-template/archive/refs/heads/main.zip)
-- Clone the repo: `git clone https://github.com/coreui/coreui-free-react-admin-template.git`
+1.0.0 - Basic Asistance Control
 
 ### Installation
 
@@ -100,7 +79,7 @@ $ yarn build
 Within the download you'll find the following directories and files, logically grouping common assets and providing both compiled and minified variations. You'll see something like this:
 
 ```
-coreui-free-react-admin-template
+atlas-management
 ├── public/          # static files
 │   └── index.html   # html template
 │
