@@ -16,6 +16,7 @@ import {
 } from '@coreui/react';
 import YearPicker from 'src/components/YearPicker';
 import MonthPicker from 'src/components/MonthPicker';
+import imagen from 'src/assets/images/ana.jpg'
 
 const FichaAsistencia = () => {
     const [selectedYear, setSelectedYear] = useState('');
@@ -28,7 +29,7 @@ const FichaAsistencia = () => {
     return (
         <>
             <div style={{ display: 'flex', alignItems: 'center' }}>
-                <CImage rounded thumbnail src="../../assets/images/ana.jpg" width={200} height={200} />
+            <CImage rounded thumbnail src={imagen} width={200} height={200} />
                 <h1 style={{ marginLeft: '10px' }}>Ana Lancha Cañas</h1>
             </div>
 
