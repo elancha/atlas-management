@@ -17,15 +17,11 @@ const _nav = [
     to: '/dashboard',
     icon: <CIcon icon={cilSpeedometer} customClassName="nav-icon" />,
   },
-  //{ //Este componente es solo titulo de una parte.
-  //  component: CNavTitle,
-  //  name: 'Alumnos',
-  //},
   {
     component: CNavItem,
-    name: 'Alumnos',
-    to: '/alumnos', //Esta es la ruta de destino.
-    icon: <CIcon icon={cilUser} customClassName="nav-icon" />, //Este es el icono de la izquierda.
+    name: 'Alumnos', //Nombre de la sección
+    to: '/alumnos', //Ruta de destino de la sección
+    icon: <CIcon icon={cilUser} customClassName="nav-icon" />, //Icono de la izquierda del nombre
   },
   {
     component: CNavItem,
