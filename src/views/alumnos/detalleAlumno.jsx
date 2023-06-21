@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from 'react'
 import { 
-    CForm, 
     CFormInput,
     CFormTextarea,
     CFormLabel,
     CRow,
     CCol,
-    CFormCheck,
     CSpinner,
 } from '@coreui/react'
 import Joi from 'joi';
@@ -25,6 +23,7 @@ import {
   } from 'src/store/amApiSlice';
 
 const alumnoValidationSchema = Joi.object({
+    //Datos del alumno
     id: Joi.string(),
     dni: Joi.string().required(),
     nombre: Joi.string().required(),
@@ -38,8 +37,13 @@ const alumnoValidationSchema = Joi.object({
     provincia: Joi.string(),
     cp: Joi.string(),
     pais: Joi.string(),
+    patologia: Joi.string(),
     observaciones: Joi.string(),
     clanPrincipal: Joi.string(),
+    nombreTutor: Joi.string(),
+    apellidosTutor: Joi.string(),
+    dniTutor: Joi.string(),
+    telTutor: Joi.string(),
   });
 
 const AddAlumno = () => {
@@ -185,6 +189,8 @@ const AddAlumno = () => {
                             type="email"
                             id="email"
                             placeholder="email@correo.com"
+                            onChange={formik.handleChange}
+                            value={formik.values.email}
                         />
                     </CCol>
                 </CRow>
@@ -196,6 +202,8 @@ const AddAlumno = () => {
                         <CFormInput
                             type="tel"
                             id="tel1"
+                            onChange={formik.handleChange}
+                            value={formik.values.tel1}
                         />
                     </CCol>
                     <CCol md="2">
@@ -205,6 +213,8 @@ const AddAlumno = () => {
                         <CFormInput
                             type="tel"
                             id="tel2"
+                            onChange={formik.handleChange}
+                            value={formik.values.tel2}
                         />
                     </CCol>
                  </CRow>
@@ -216,6 +226,8 @@ const AddAlumno = () => {
                         <CFormInput
                             type='text'
                             id='direccion'
+                            onChange={formik.handleChange}
+                            value={formik.values.direccion}
                         />
                     </CCol>
                 </CRow>
@@ -227,15 +239,19 @@ const AddAlumno = () => {
                         <CFormInput
                             type="text"
                             id="cp"
+                            onChange={formik.handleChange}
+                            value={formik.values.cp}
                         />
                     </CCol>
                     <CCol md="2">
-                        <CFormLabel htmlFor="poblacion">Población:</CFormLabel>
+                        <CFormLabel htmlFor="poblacion">Localidad:</CFormLabel>
                     </CCol>
                     <CCol md="4">
                         <CFormInput
                             type="text"
                             id="poblacion"
+                            onChange={formik.handleChange}
+                            value={formik.values.localidad}
                         />
                     </CCol>
                  </CRow>
@@ -243,7 +259,10 @@ const AddAlumno = () => {
                     <CFormTextarea
                         id="patologia"
                         label="Patología médica a destacar:"
-                        rows={3} />
+                        rows={3}
+                        onChange={formik.handleChange}
+                        value={formik.values.patologia}
+                    />
                 </CRow>
 
                 <hr />
@@ -264,6 +283,8 @@ const AddAlumno = () => {
                             type='text'
                             id='nombreTutor'
                             placeholder='Nombre completo'
+                            onChange={formik.handleChange}
+                            value={formik.values.nombreTutor}
                         />
                     </CCol>
                 </CRow>
@@ -276,6 +297,8 @@ const AddAlumno = () => {
                             type='text'
                             id='apellidosTutor'
                             placeholder='Apellidos'
+                            onChange={formik.handleChange}
+                            value={formik.values.apellidosTutor}
                         />
                     </CCol>
                 </CRow>
@@ -288,6 +311,8 @@ const AddAlumno = () => {
                             type="text"
                             id="dni"
                             placeholder="DNI / Pasaporte"
+                            onChange={formik.handleChange}
+                            value={formik.values.dniTutor}
                         />
                     </CCol>
                     <CCol md="2">
@@ -297,6 +322,8 @@ const AddAlumno = () => {
                         <CFormInput
                             type="tel"
                             id="telTutor"
+                            onChange={formik.handleChange}
+                            value={formik.values.telTutor}
                         />
                     </CCol>
                  </CRow>
