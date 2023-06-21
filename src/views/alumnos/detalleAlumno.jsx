@@ -17,6 +17,7 @@ import Form from 'react-bootstrap/Form';
 import { useFormik } from 'formik';
 import { pushToast } from 'src/store/appSlice';
 import { apiSlice } from 'src/store/apiSlice';
+import ClanPicker from 'src/components/ClanPicker'; 
 import {
     useInsertAlumnoMutation,
     useUpdateAlumnoMutation,
@@ -37,6 +38,7 @@ const alumnoValidationSchema = Joi.object({
     cp: Joi.string(),
     pais: Joi.string(),
     observaciones: Joi.string(),
+    clanPrincipal: Joi.string(),
   });
 
 const AddAlumno = () => {
@@ -62,7 +64,7 @@ const AddAlumno = () => {
                 }
               })
         }
-    }, []);
+    }, [dni]);
 
 
     const formik = useFormik({
@@ -303,6 +305,11 @@ const AddAlumno = () => {
 
                 {/* ========== CLASES LUDOLANDIA ========== */}
 
+                <CRow className="mb-3">
+                    <CCol>
+                        <ClanPicker formik={formik} fieldName='clanPrincipal'></ClanPicker>
+                    </CCol>
+                </CRow>
                 <CRow className="mb-3">
                     <CCol>
                         <CFormLabel>Clases Ludolandia:</CFormLabel>
