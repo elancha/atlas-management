@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 import { 
     CForm, 
     CFormInput,
@@ -6,22 +6,117 @@ import {
     CFormLabel,
     CRow,
     CCol,
-    CFormCheck
+    CFormCheck,
+    CSpinner,
 } from '@coreui/react'
+import Joi from 'joi';
 import { CButton } from '@coreui/react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { useDispatch } from 'react-redux';
+import Form from 'react-bootstrap/Form';
+import { useFormik } from 'formik';
+import { pushToast } from 'src/store/appSlice';
+import { apiSlice } from 'src/store/apiSlice';
+import {
+    useInsertAlumnoMutation,
+    useUpdateAlumnoMutation,
+  } from 'src/store/amApiSlice';
 
-const handleConfirm = () => {
-    if (window.confirm('¿Estás seguro de que deseas guardar los cambios?')) {
-
-      // Agregar lógica para guardar alumnos en BD
-      window.location.href = '/alumnos'; // Redirecciona a la lista de alumnos
-    }
-};
+const alumnoValidationSchema = Joi.object({
+    id: Joi.string(),
+    dni: Joi.string().required(),
+    nombre: Joi.string().required(),
+    apellidos: Joi.string().required(),
+    fechaNac: Joi.date(),
+    email: Joi.string(),
+    tel1: Joi.string(),
+    tel2: Joi.string(),
+    direccion: Joi.string(),
+    localidad: Joi.string(),
+    provincia: Joi.string(),
+    cp: Joi.string(),
+    pais: Joi.string(),
+    observaciones: Joi.string(),
+  });
 
 const AddAlumno = () => {
+    const navigate = useNavigate();
+    const dispatch = useDispatch();
+    let { dni } = useParams();
+
+    const [getAlumno, { isFetching }] = apiSlice.useLazyGetAlumnoQuery();
+    const [insertAlumno] = useInsertAlumnoMutation();
+    const [updateAlumno] = useUpdateAlumnoMutation();
+
+    useEffect(() => {
+        if(dni === 'add'){
+            const newAlumno = alumnoValidationSchema.validate({}, {abortEarly: false}).value;
+            formik.setValues(newAlumno);
+        } else {
+            getAlumno({
+                dni,
+              }).then(response => {
+                if(response.isSuccess) {
+                  let data = structuredClone(response.data);
+                  formik.setValues(data);
+                }
+              })
+        }
+    }, []);
+
+
+    const formik = useFormik({
+        initialValues: alumnoValidationSchema.validate({}, {abortEarly: false}).value,
+        validate: (values) => {
+          const res = alumnoValidationSchema.validate(values, {
+            allowUnknown: true,
+            abortEarly: false,
+          }).error;
+          return res;
+        },
+        onSubmit: (values) => saveAlumno(values),
+      });
+
+      const saveAlumno = async (data) => {
+        const { id } = data;
+    
+        let promise;
+        if (id) {
+          promise = updateAlumno({
+            alumno: data,
+            dni: data.dni,
+          });
+        } else {
+          promise = insertAlumno({
+            alumno: data,
+          });
+        }
+    
+        promise.unwrap().then((alumno) => {
+        dispatch(pushToast({
+            body: "Cambios realizados correctamente",
+            color: "success",
+            }));
+          if(!id) {
+            navigate(`/alumnos/${alumno.dni}`);
+          }
+        }).catch(err => {
+            dispatch(pushToast({
+                body: err?.data || "Ha ocurrido un error guardando los cambios",
+                color: "danger",
+              }));
+        });
+      };
     return (
         <>
-            <CForm>
+            <Form 
+                onSubmit={formik.handleSubmit} 
+                noValidate 
+                onKeyDown={(e) => {
+                  if ((e.charCode || e.keyCode) === 13) {
+                    e.preventDefault();
+                  }
+                }}>
 
                 {/* ========== DATOS DEL ALUMNO ========== */}
 
@@ -34,6 +129,8 @@ const AddAlumno = () => {
                             type='text'
                             id='nombre'
                             placeholder='Nombre completo'
+                            value={formik.values.nombre}
+                            onChange={formik.handleChange}
                         />
                     </CCol>
                 </CRow>
@@ -46,6 +143,8 @@ const AddAlumno = () => {
                             type='text'
                             id='apellidos'
                             placeholder='Apellidos'
+                            onChange={formik.handleChange}
+                            value={formik.values.apellidos}
                         />
                     </CCol>
                 </CRow>
@@ -58,6 +157,8 @@ const AddAlumno = () => {
                             type="text"
                             id="dni"
                             placeholder="DNI / Pasaporte"
+                            onChange={formik.handleChange}
+                            value={formik.values.dni}
                         />
                     </CCol>
                     <CCol md="2">
@@ -67,6 +168,8 @@ const AddAlumno = () => {
                         <CFormInput
                             type="date"
                             id="fechaNac"
+                            onChange={formik.handleChange}
+                            value={formik.values.fechaNac}
                         />
                     </CCol>
                  </CRow>
@@ -457,10 +560,14 @@ const AddAlumno = () => {
                      />
                     </CCol>
                 </CRow>
-            </CForm>
-            <CButton color="primary" onClick={handleConfirm}>
-                Guardar y volver a la lista de alumnos
-            </CButton>
+                <CButton color="primary" disabled={formik.isSubmitting} type="submit" >
+                    {
+                        formik.isSubmitting && <CSpinner size="sm" className='me-2' />
+                    }
+                    Guardar
+                </CButton>
+            </Form>
+
         </>
     )
 }

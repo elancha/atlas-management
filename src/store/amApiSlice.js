@@ -4,6 +4,13 @@ const injectedRtkApi = api.injectEndpoints({
         getAlumno: build.query({
             query: (queryArg) => ({ url: `/alumnos/${queryArg.dni}` }),
         }),
+        updateAlumno: build.mutation({
+            query: (queryArg) => ({
+                url: `/alumnos/${queryArg.dni}`,
+                method: "PUT",
+                body: queryArg.alumno,
+            }),
+        }),
         deleteAlumno: build.mutation({
             query: (queryArg) => ({
                 url: `/alumnos/${queryArg.dni}`,
@@ -31,4 +38,4 @@ const injectedRtkApi = api.injectEndpoints({
     overrideExisting: false,
 });
 export { injectedRtkApi as amApiSlice };
-export const { useGetAlumnoQuery, useDeleteAlumnoMutation, useGetAlumnosQuery, useInsertAlumnoMutation, useLoginUserMutation, } = injectedRtkApi;
+export const { useGetAlumnoQuery, useUpdateAlumnoMutation, useDeleteAlumnoMutation, useGetAlumnosQuery, useInsertAlumnoMutation, useLoginUserMutation, } = injectedRtkApi;
