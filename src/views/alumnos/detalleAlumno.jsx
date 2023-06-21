@@ -18,6 +18,7 @@ import { useFormik } from 'formik';
 import { pushToast } from 'src/store/appSlice';
 import { apiSlice } from 'src/store/apiSlice';
 import ClanPicker from 'src/components/ClanPicker'; 
+import PaymentPicker from 'src/components/PaymentPicker';
 import {
     useInsertAlumnoMutation,
     useUpdateAlumnoMutation,
@@ -304,211 +305,58 @@ const AddAlumno = () => {
                 <hr />
 
                 {/* ========== CLASES LUDOLANDIA ========== */}
-
+                
                 <CRow className="mb-3">
-                    <CCol>
+                    <CCol md="2">
+                        <CFormLabel htmlFor="clanPpal">Clan Principal:</CFormLabel>
+                    </CCol>
+                    <CCol md="10">
                         <ClanPicker formik={formik} fieldName='clanPrincipal'></ClanPicker>
                     </CCol>
                 </CRow>
+
                 <CRow className="mb-3">
-                    <CCol>
-                        <CFormLabel>Clases Ludolandia:</CFormLabel>
+                    <CCol md="2">
+                        <CFormLabel htmlFor="d1">Doblaje 1:</CFormLabel>
                     </CCol>
-                </CRow>
-                <CRow className="mb-3">
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="rapsodia"
-                            label="Rapsodia - Lunes 20:00-22:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="heiko"
-                            label="Heiko - Jueves 20:00-22:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="doble_nada"
-                            label="Doble o Nada - Viernes 20:00-22:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="black_spiral"
-                            label="Black Spiral - Sábado 12:00-14:00"
-                        />
-                    </CCol>
-                </CRow>
-                <CRow className="mb-3">
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="berserkers"
-                            label="Berserkers - Martes 20:00-22:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="villaego"
-                            label="T. Tecnificación - Jueves 20:00-22:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="gorgonas"
-                            label="Gorgonas - Sábado 10:00-12:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="combate"
-                            label="Taller Combate - Domingo 12:00-14:00"
-                        />
-                    </CCol>
-                </CRow>
-                <CRow className="mb-3">
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="legion"
-                            label="Legión 404 - Miércoles 20:00-22:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="senkai"
-                            label="Senkai - Viernes 18:00-20:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="cerbero"
-                            label="Cerbero - Sábado 10:00-12:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="xforce"
-                            label="X-Force - Domingos 14:00-16:00"
-                        />
-                    </CCol>
-                </CRow>
-                <CRow className="mb-3">
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="beskari"
-                            label="Beskari - Miércoles 20:00-23:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="gancho"
-                            label="El Gancho - Viernes 20:00-22:00"
-                        />
+                    <CCol md="10">
+                        <ClanPicker formik={formik} fieldName='doblaje1'></ClanPicker>
                     </CCol>
                 </CRow>
 
-                <hr />
-
-                {/* ========== CLASES DELICIAS ========== */}
-
                 <CRow className="mb-3">
-                    <CCol>
-                        <CFormLabel>Clases Delicias:</CFormLabel>
+                    <CCol md="2">
+                        <CFormLabel htmlFor="d2">Doblaje 2:</CFormLabel>
                     </CCol>
-                </CRow>
-                <CRow className="mb-3">
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="spec3"
-                            label="Spec-3 - Jueves 20:00-22:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="midnight"
-                            label="Midnight - Domingo 10:00-12:00"
-                        />
-                    </CCol>
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="combate_delicias"
-                            label="Taller Combate - Domingo 12:00-14:00"
-                        />
+                    <CCol md="10">
+                        <ClanPicker formik={formik} fieldName='doblaje2'></ClanPicker>
                     </CCol>
                 </CRow>
 
-                <hr />
-
-                {/* ========== CLASES FUENLABRADA ========== */}
-
                 <CRow className="mb-3">
-                    <CCol>
-                        <CFormLabel>Clases Fuenlabrada:</CFormLabel>
+                    <CCol md="2">
+                        <CFormLabel htmlFor="d3">Doblaje 3:</CFormLabel>
                     </CCol>
-                </CRow>
-                <CRow className="mb-3">
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="michiclorianos"
-                            label="Michiclorianos - Miércoles 19:00-21:00"
-                        />
+                    <CCol md="10">
+                        <ClanPicker formik={formik} fieldName='doblaje3'></ClanPicker>
                     </CCol>
                 </CRow>
 
-                <hr />
-
-                {/* ========== CLASES RIVAS ========== */}
-
                 <CRow className="mb-3">
-                    <CCol>
-                        <CFormLabel>Clases Rivas-Vaciamadrid:</CFormLabel>
+                    <CCol md="2">
+                        <CFormLabel htmlFor="d4">Doblaje 4:</CFormLabel>
                     </CCol>
-                </CRow>
-                <CRow className="mb-3">
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="black_flag"
-                            label="Black Flag - Jueves 19:30-21:30"
-                        />
+                    <CCol md="10">
+                        <ClanPicker formik={formik} fieldName='doblaje4'></ClanPicker>
                     </CCol>
                 </CRow>
 
-                <hr />
-
-                {/* ========== CLASES TRES CANTOS ========== */}
-
                 <CRow className="mb-3">
-                    <CCol>
-                        <CFormLabel>Clases Tres Cantos:</CFormLabel>
+                    <CCol md="2">
+                        <CFormLabel htmlFor="d5">Doblaje 5:</CFormLabel>
                     </CCol>
-                </CRow>
-                <CRow className="mb-3">
-                    <CCol md="3">
-                        <CFormCheck
-                            type="checkbox"
-                            id="amarok"
-                            label="Amarok - Lunes 20:00-22:00"
-                        />
+                    <CCol md="10">
+                        <ClanPicker formik={formik} fieldName='doblaje5'></ClanPicker>
                     </CCol>
                 </CRow>
 
@@ -518,39 +366,10 @@ const AddAlumno = () => {
 
                 <CRow className="mb-3">
                     <CCol md="2">
-                        <CFormLabel>Tipo de Pago:</CFormLabel>
+                        <CFormLabel htmlFor="pago">Tipo de Pago:</CFormLabel>
                     </CCol>
                     <CCol md="10">
-                        <div>
-                            <CFormCheck
-                                type="radio"
-                                id="una_cuota"
-                                name="cuota"
-                                value="una_cuota"
-                                label="Una Cuota"
-                            />
-                            <CFormCheck
-                                type="radio"
-                                id="dos_cuota"
-                                name="cuota"
-                                value="una_cuota"
-                                label="Dos Cuotas"
-                            />
-                            <CFormCheck
-                                type="radio"
-                                id="tres_cuotas"
-                                name="cuota"
-                                value="tres_cuotas"
-                                label="Tres Cuotas"
-                            />
-                            <CFormCheck
-                                type="radio"
-                                id="mensual"
-                                name="cuota"
-                                value="mensual"
-                                label="Mensual"
-                            />
-                        </div>
+                        <PaymentPicker formik={formik} fieldName='tipoPago'></PaymentPicker>
                     </CCol>
                 </CRow>
 
@@ -567,11 +386,17 @@ const AddAlumno = () => {
                      />
                     </CCol>
                 </CRow>
-                <CButton color="primary" disabled={formik.isSubmitting} type="submit" >
+                <CButton color="primary" disabled={formik.isSubmitting} type="submit" className='float-end mb-3'>
                     {
                         formik.isSubmitting && <CSpinner size="sm" className='me-2' />
                     }
                     Guardar
+                </CButton>
+                <CButton color="danger" disabled={formik.isSubmitting} type="submit" className='float-end mb-3' style={{ marginRight: '10px' }}>
+                    {
+                        formik.isSubmitting && <CSpinner size="sm" className='me-2' />
+                    }
+                    Eliminar
                 </CButton>
             </Form>
 
