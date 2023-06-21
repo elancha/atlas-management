@@ -8,10 +8,14 @@
 'use strict'
 
 module.exports = {
+  testEnvironment: 'jsdom',
   collectCoverageFrom: [
     'src/**/*.{js,jsx}',
     '!**/*index.js',
     '!src/serviceWorker.js',
     '!src/polyfill.js',
   ],
+  transform: {
+    '^.+\\.(js|jsx|ts|tsx|mjs)$': 'babel-jest',
+  },
 }

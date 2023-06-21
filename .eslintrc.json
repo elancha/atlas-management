@@ -1,33 +1,33 @@
 {
-  "parser": "@babel/eslint-parser",
-  "env": {
-      "browser": true,
-      "es2021": true
-  },
-  "extends": [
-      "plugin:react/recommended",
-      "plugin:prettier/recommended",
-      "plugin:react/jsx-runtime"
-  ],
-  "parserOptions": {
-      "ecmaFeatures": {
-          "jsx": true
-      },
-      "ecmaVersion": "latest",
-      "sourceType": "module",
-      "requireConfigFile": false,
-      "babelOptions": {
-          "presets": ["@babel/preset-react"]
-       }
-  },
-  "plugins": [
-      "react",
-      "prettier"
-  ],
-  "rules": {
-      "react/react-in-jsx-scope": "off",
-      "prettier/prettier": 0,
-      "react/prop-types": 0,
-      "react/no-unescaped-entities": "off"
-  }
+    "parser": "@babel/eslint-parser",
+    "env": {
+        "browser": true,
+        "es2021": true
+    },
+    "extends": [
+        "plugin:react/recommended",
+        "plugin:prettier/recommended",
+        "plugin:react/jsx-runtime"
+    ],
+    "parserOptions": {
+        "ecmaFeatures": {
+            "jsx": true
+        },
+        "ecmaVersion": "latest",
+        "sourceType": "module",
+        "requireConfigFile": false,
+        "babelOptions": {
+            "presets": ["@babel/preset-react"]
+         }
+    },
+    "plugins": [
+        "react",
+        "prettier"
+    ],
+    "rules": {
+        "react/react-in-jsx-scope": "off",
+        "prettier/prettier": 0,
+        "react/prop-types": 0,
+        "react/no-unescaped-entities": "off"
+    }
 }

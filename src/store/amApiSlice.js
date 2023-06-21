@@ -1,14 +1,34 @@
-"use strict";
-exports.__esModule = true;
-exports.useLoginUserMutation = exports.amApiSlice = void 0;
-var baseApi_1 = require("./baseApi");
-var injectedRtkApi = baseApi_1.baseApi.injectEndpoints({
-    endpoints: function (build) { return ({
+import { baseApi as api } from "./baseApi";
+const injectedRtkApi = api.injectEndpoints({
+    endpoints: (build) => ({
+        getAlumno: build.query({
+            query: (queryArg) => ({ url: `/alumnos/${queryArg.dni}` }),
+        }),
+        deleteAlumno: build.mutation({
+            query: (queryArg) => ({
+                url: `/alumnos/${queryArg.dni}`,
+                method: "DELETE",
+            }),
+        }),
+        getAlumnos: build.query({
+            query: () => ({ url: `/alumnos` }),
+        }),
+        insertAlumno: build.mutation({
+            query: (queryArg) => ({
+                url: `/alumnos`,
+                method: "POST",
+                body: queryArg.alumno,
+            }),
+        }),
         loginUser: build.mutation({
-            query: function (queryArg) { return ({ url: "/auth/user/login", method: 'POST', body: queryArg.user }); }
-        })
-    }); },
-    overrideExisting: false
+            query: (queryArg) => ({
+                url: `/auth/login`,
+                method: "POST",
+                body: queryArg.user,
+            }),
+        }),
+    }),
+    overrideExisting: false,
 });
-exports.amApiSlice = injectedRtkApi;
-exports.useLoginUserMutation = injectedRtkApi.useLoginUserMutation;
+export { injectedRtkApi as amApiSlice };
+export const { useGetAlumnoQuery, useDeleteAlumnoMutation, useGetAlumnosQuery, useInsertAlumnoMutation, useLoginUserMutation, } = injectedRtkApi;
