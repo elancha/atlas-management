@@ -74,7 +74,7 @@ const Alumnos = () => {
                             {
                               alumnos.length > 0 && 
                                 alumnos.map((alumno) => (
-                                    <CTableRow key={alumno.dni} onClick={() => navigate(`/alumnos/${alumno.dni}`)}> {/* Esto es incorrecto pero es solo para que visualmente se vea lo que quiero hacer. */}
+                                    <CTableRow key={alumno.dni} onClick={() => navigate(`/alumnos/${alumno.dni}`)}> 
                                         <CTableDataCell>{alumno.nombre}</CTableDataCell>
                                         <CTableDataCell>{alumno.apellidos}</CTableDataCell>
                                         <CTableDataCell>{alumno.dni}</CTableDataCell>
