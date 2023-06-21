@@ -29,6 +29,10 @@ import {
   getUser,
 } from 'src/store/appSlice';
 
+import {
+  useLoginUserMutation,
+} from 'src/store/amApiSlice';
+
 export default function Login() {
   const [message, setMessage] = useState('');
   const navigate = useNavigate();
@@ -38,6 +42,7 @@ export default function Login() {
   const dispatch = useDispatch();
   const [urlParams] = useSearchParams();
   const [authCode, setAuthCode] = useState("");
+  const [login] = useLoginUserMutation();
 
   const validationSchema = object().shape({
     email: string().default(urlParams.get("email") || "").required().matches(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i),
@@ -59,7 +64,18 @@ export default function Login() {
     initialValues: validationSchema.getDefault(),
     validationSchema,
     onSubmit: async (values) => {
-      dispatch(setToken({accessToken: "123456"}));
+
+      login({
+        user: {
+          email: values.email,
+          pass: values.password,
+        }
+      }).unwrap().then((data) => {
+          dispatch(setToken(data));
+      }).catch((error) => {
+        setMessage(error?.data);
+      });
+
 
       formik.setSubmitting(false);
     },

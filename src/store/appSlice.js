@@ -72,6 +72,9 @@ export const {
   // UI
   setSidebarUnfoldable,
   setSidebarShow,
+  clearToasts,
+  pushToast,
+  
 } = appSlice.actions
 
 // Auth
@@ -86,5 +89,6 @@ export const hasExpired = (state) => {
 //UI
 export const getSidebarShow = (state) => state.app.ui.sidebarShow;
 export const getSidebarUnfoldable = (state) => state.app.ui.sidebarUnfoldable;
+export const getToasts = (state) => state.app.ui.toasts;
 
 export default appSlice.reducer
