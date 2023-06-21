@@ -20,10 +20,10 @@ import PaymentPicker from 'src/components/PaymentPicker';
 import {
     useInsertAlumnoMutation,
     useUpdateAlumnoMutation,
+    useDeleteAlumnoMutation,
   } from 'src/store/amApiSlice';
 
 const alumnoValidationSchema = Joi.object({
-    //Datos del alumno
     id: Joi.string(),
     dni: Joi.string().required(),
     nombre: Joi.string().required(),
@@ -54,6 +54,23 @@ const AddAlumno = () => {
     const [getAlumno, { isFetching }] = apiSlice.useLazyGetAlumnoQuery();
     const [insertAlumno] = useInsertAlumnoMutation();
     const [updateAlumno] = useUpdateAlumnoMutation();
+    const [deleteAlumnoMutation] = useDeleteAlumnoMutation();
+
+    const deleteAlumno = async () => {
+        try {
+          await deleteAlumnoMutation({ dni });
+          dispatch(pushToast({
+            body: "Alumno eliminado correctamente",
+            color: "success",
+          }));
+          navigate('/alumnos');
+        } catch (error) {
+          dispatch(pushToast({
+            body: error?.data || "Ha ocurrido un error al eliminar al alumno",
+            color: "danger",
+          }));
+        }
+      };
 
     useEffect(() => {
         if(dni === 'add'){
@@ -309,7 +326,7 @@ const AddAlumno = () => {
                     <CCol md="4">
                         <CFormInput
                             type="text"
-                            id="dni"
+                            id="dniTutor"
                             placeholder="DNI / Pasaporte"
                             onChange={formik.handleChange}
                             value={formik.values.dniTutor}
@@ -419,7 +436,7 @@ const AddAlumno = () => {
                     }
                     Guardar
                 </CButton>
-                <CButton color="danger" disabled={formik.isSubmitting} type="submit" className='float-end mb-3' style={{ marginRight: '10px' }}>
+                <CButton color="danger" disabled={formik.isSubmitting} type="button" className='float-end mb-3' style={{ marginRight: '10px' }} onClick={deleteAlumno}>
                     {
                         formik.isSubmitting && <CSpinner size="sm" className='me-2' />
                     }
